@@ -1500,13 +1500,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74fa083948c1298448e9ccc2381b3226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpForce: 14
-  rb: {fileID: 1416861637}
-  groundCheck: {fileID: 802716401}
-  groundLayer:
+  foot: {fileID: 802716401}
+  groundMask:
     serializedVersion: 2
     m_Bits: 8
+  player_bounce: {fileID: 6200000, guid: 76578a4b0d5d29446ac50cb1dccbdff6, type: 2}
+  player_mat: {fileID: 6200000, guid: e54f5e64e0222f143aae56e067de7550, type: 2}
 --- !u!50 &1416861637
 Rigidbody2D:
   serializedVersion: 4
