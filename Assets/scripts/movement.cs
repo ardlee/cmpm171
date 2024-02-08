@@ -6,6 +6,7 @@ public class movement : MonoBehaviour {
 
     float directionX;
     float walkSpeed = 6f;
+    
 
     // ground
     bool isGround;
@@ -50,7 +51,7 @@ public class movement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W) && isGround && canJump)
         {
-            jumpValue += .05f;
+            jumpValue += .1f;
         }
 
         if (Input.GetKeyDown(KeyCode.W) && isGround && canJump)
@@ -58,7 +59,7 @@ public class movement : MonoBehaviour {
             rb.velocity = new Vector2(.0f, rb.velocity.y);
         }
 
-        if (jumpValue >= 15f && isGround)
+        if (jumpValue >= 19f && isGround)
         {
             float tempX = directionX * walkSpeed;
             float tempY = jumpValue;
