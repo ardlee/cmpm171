@@ -10,7 +10,7 @@ public class movement : MonoBehaviour {
 
     // ground
     bool isGround;
-    float ratioFoot = .03f;
+    float ratioFoot = .5f;
 
     // jump
     bool canJump = true;
@@ -59,7 +59,7 @@ public class movement : MonoBehaviour {
             rb.velocity = new Vector2(.0f, rb.velocity.y);
         }
 
-        if (jumpValue >= 19f && isGround)
+        if (jumpValue >= 18f && isGround)
         {
             float tempX = directionX * walkSpeed;
             float tempY = jumpValue;
