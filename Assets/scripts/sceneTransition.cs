@@ -1,26 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class sceneTransition : MonoBehaviour
 {
-    void Update()
+
+    public GameObject mainMenu; 
+    public GameObject optionsMenu;
+    public GameObject creditsMenu; 
+    public GameObject loadMenu;
+    public GameObject leaderBoardScene;
+    public GameObject levelSelectionScene;
+
+    public void StartGame()
     {
-        // Check if the space bar is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Load the next scene
-            LoadNextScene();
-        }
+        SceneManager.LoadScene("playScene");
     }
 
-    void LoadNextScene()
-    {
-        // Get the index of the current scene
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        // Load the next scene (loop back to the first scene if it's the last one)
-        SceneManager.LoadScene((currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings);
+    public void OpenLoad()
+    {
+        SceneManager.LoadScene("loadScene");
+    }
+
+    public void OpenLeaderBoard()
+    {
+        SceneManager.LoadScene("leaderBoardScene");
+    }
+
+
+    public void OpenOptions()
+    {
+        SceneManager.LoadScene("optionScene");
+
+    }
+
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene("creditScene");
+    }
+
+    public void OpenLevelSelection()
+    {
+        SceneManager.LoadScene("levelSelectionScene");
+    }
+
+    public void ExitGame()
+    {
+        #if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
+    }
+
+    public void BackToMainMenu()
+    {
+        mainMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+        creditsMenu.SetActive(false);
+        loadMenu.SetActive(false);
+        leaderBoardScene.SetActive(false);
+        levelSelectionScene.SetActive(false);
     }
 }
