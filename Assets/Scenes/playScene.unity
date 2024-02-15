@@ -3226,6 +3226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grappleLength: 2
+  ropeSpeed: 5
+  swingForce: 2
   grappleLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3248,7 +3250,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 2.6925821
+  m_Distance: 3
   m_MaxDistanceOnly: 0
 --- !u!4 &1443516351 stripped
 Transform:
