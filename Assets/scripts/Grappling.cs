@@ -21,7 +21,7 @@ public class Grappling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             RaycastHit2D hit = Physics2D.Raycast(
             origin: Camera.main.ScreenToWorldPoint(Input.mousePosition),
@@ -43,7 +43,7 @@ public class Grappling : MonoBehaviour
             rope.enabled = true;
         }
         }
-    if(Input.GetMouseButtonUp(0))
+    if(Input.GetKeyUp(KeyCode.Space))
     {
         joint.enabled = false;
         rope.enabled = false;
