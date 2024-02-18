@@ -6,20 +6,29 @@ using UnityEngine.SceneManagement;
 
 public class sceneTransition : MonoBehaviour
 {
-
+    /*
     public GameObject mainMenu; 
     public GameObject optionsMenu;
     public GameObject creditsMenu; 
     public GameObject loadMenu;
     public GameObject leaderBoardScene;
     public GameObject levelSelectionScene;
+    */
 
     public void StartGame()
     {
         SceneManager.LoadScene("playScene");
     }
+    public void ExitGame()
+    {
+        #if UNITY_EDITOR
+                EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
+    }
 
-
+    /*
     public void OpenLoad()
     {
         SceneManager.LoadScene("loadScene");
@@ -47,14 +56,7 @@ public class sceneTransition : MonoBehaviour
         SceneManager.LoadScene("levelSelectionScene");
     }
 
-    public void ExitGame()
-    {
-        #if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
-        #else
-        Application.Quit();
-        #endif
-    }
+  
 
     public void BackToMainMenu()
     {
@@ -65,4 +67,5 @@ public class sceneTransition : MonoBehaviour
         leaderBoardScene.SetActive(false);
         levelSelectionScene.SetActive(false);
     }
+    */
 }
