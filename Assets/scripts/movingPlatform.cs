@@ -10,17 +10,19 @@ public class movingPlatform : MonoBehaviour
 
     void Start()
     {
-        targetPos = end.position; 
+        Debug.Log("Start position: " + start.position);
+        Debug.Log("End position: " + end.position);
+        targetPos = end.position;
     }
 
     private void Update()
     {
-        if ( (Vector2.Distance(transform.position, start.position) < .1f)) 
+        if (Vector2.Distance(transform.position, start.position) < 0.1f)
         {
-            targetPos = end.position; 
+            targetPos = end.position;
         }
 
-        if ((Vector2.Distance(transform.position, end.position) < .1f))
+        if (Vector2.Distance(transform.position, end.position) < 0.1f)
         {
             targetPos = start.position;
         }
