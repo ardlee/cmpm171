@@ -10,8 +10,8 @@ public class cardManager : MonoBehaviour
     public GameObject[] cards; // Array of card game objects
     public TextMeshProUGUI[] ammoTexts; // Array of UI text elements for displaying ammo counts
 
-    private int currentcardIndex = 0; // Index of the current card
-    private int[] ammoCounts; // Array to store ammo counts for each card
+    public int currentcardIndex = 0; // Index of the current card
+    public int[] ammoCounts; // Array to store ammo counts for each card
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class cardManager : MonoBehaviour
         ammoCounts = new int[cards.Length];
 
         // Set initial ammo counts for each card
-        ammoCounts[0] = 2;  
+        ammoCounts[0] = 3;  
         ammoCounts[1] = 4;  
         ammoCounts[2] = 3; 
 
@@ -66,16 +66,26 @@ public class cardManager : MonoBehaviour
     }
 
     void Fire()
+{
+    // Check if there's ammo to fire
+    if (ammoCounts[currentcardIndex] >= 1)
     {
-        // Check if there's enough ammo to fire
-        if (ammoCounts[currentcardIndex] > 0)
-        {
-            ammoCounts[currentcardIndex]--;
-            UpdateAmmoUI(); // Update UI with new ammo count
-        }
-    }
+        ammoCounts[currentcardIndex]--;
+        UpdateAmmoUI(); // Update UI with new ammo count
 
-    void UpdateAmmoUI()
+        // Add any additional logic related to firing here
+
+        Debug.Log("Fired from card " + currentcardIndex + ", Ammo Count: " + ammoCounts[currentcardIndex]);
+    }
+    else
+    {
+        Debug.Log("No ammo to fire from card " + currentcardIndex);
+    }
+}
+    
+
+    
+    public void UpdateAmmoUI()
     {
         // Update UI text elements with current ammo counts
         for (int i = 0; i < ammoTexts.Length; i++)

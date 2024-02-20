@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,15 @@ using UnityEngine;
 public class Grappling : MonoBehaviour
 {
     [SerializeField] private float grappleLength;
-    [SerializeField] private float initialRopeMultiplier = 2f; // Adjust the initial rope length multiplier
-    [SerializeField] private float ropeSpeed = 5f; // Adjust the speed as needed
-    [SerializeField] private float swingForce = 20f; // Adjust the swing force as needed
+    [SerializeField] private float initialRopeMultiplier = 2f;
+    [SerializeField] private float ropeSpeed = 5f;
+    [SerializeField] private float swingForce = 20f;
     [SerializeField] private LayerMask grappleLayer;
     [SerializeField] private LineRenderer rope;
 
     private Vector3 grapplePoint;
     private DistanceJoint2D joint;
+    private cardManager cardManager; 
 
     void Start()
     {
@@ -22,28 +24,39 @@ public class Grappling : MonoBehaviour
 
         // Set initial rope length
         joint.distance = grappleLength * initialRopeMultiplier;
+
+        // Get reference to the cardManager script
+        cardManager = GetComponent<cardManager>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Check if the player is on the card that allows grappling\
+        if (cardManager != null && cardManager.currentcardIndex == 0 && cardManager.ammoCounts[cardManager.currentcardIndex] > 0)
         {
-            RaycastHit2D hit = Physics2D.Raycast(
-                origin: Camera.main.ScreenToWorldPoint(Input.mousePosition),
-                direction: Vector2.zero,
-                distance: Mathf.Infinity,
-                layerMask: grappleLayer
-            );
-
-            if (hit.collider != null)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                grapplePoint = hit.point;
-                grapplePoint.z = 0;
-                joint.connectedAnchor = grapplePoint;
-                joint.enabled = true;
-                rope.SetPosition(0, grapplePoint);
-                rope.SetPosition(1, transform.position);
-                rope.enabled = true;
+                RaycastHit2D hit = Physics2D.Raycast(
+                    origin: Camera.main.ScreenToWorldPoint(Input.mousePosition),
+                    direction: Vector2.zero,
+                    distance: Mathf.Infinity,
+                    layerMask: grappleLayer
+                );
+
+                if (hit.collider != null)
+                {
+                    grapplePoint = hit.point;
+                    grapplePoint.z = 0;
+                    joint.connectedAnchor = grapplePoint;
+                    joint.enabled = true;
+                    rope.SetPosition(0, grapplePoint);
+                    rope.SetPosition(1, transform.position);
+                    rope.enabled = true;
+                }
+                if(hit.collider == null){
+                    cardManager.ammoCounts[cardManager.currentcardIndex]++;
+                    cardManager.UpdateAmmoUI();
+                }
             }
         }
 
@@ -58,16 +71,21 @@ public class Grappling : MonoBehaviour
             rope.SetPosition(1, transform.position);
 
             // Adjust rope length using W and S keys
-            float ropeInput = Input.GetAxis("Vertical"); // W: 1, S: -1, No input: 0
+            float ropeInput = Input.GetAxis("Vertical");
             joint.distance += ropeInput * ropeSpeed * Time.deltaTime;
-
-            // Clamp rope length to avoid unexpected behavior
             joint.distance = Mathf.Clamp(joint.distance, 0, grappleLength + 4);
 
             // Allow swinging using A and D keys
-            float swingInput = Input.GetAxis("Horizontal"); // A: -1, D: 1, No input: 0
+            float swingInput = Input.GetAxis("Horizontal");
             Vector2 swingForceVector = new Vector2(swingInput * swingForce, 0f);
             GetComponent<Rigidbody2D>().AddForce(swingForceVector, ForceMode2D.Force);
         }
+    }
+
+    // Check if there is enough ammo for the grapple
+    bool CanUseGrapple()
+    {   
+
+        return cardManager.ammoCounts[cardManager.currentcardIndex]> 0;
     }
 }
