@@ -2664,7 +2664,7 @@ Transform:
   m_GameObject: {fileID: 1168115659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05721374, y: -0.2781177, z: 4.7121763}
+  m_LocalPosition: {x: 5.42, y: -0.71, z: 4.7121763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3524,6 +3524,8 @@ MonoBehaviour:
   - {fileID: 1325757517}
   - {fileID: 545946178}
   - {fileID: 2135243940}
+  currentcardIndex: 0
+  ammoCounts: 
 --- !u!114 &1416861642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3537,6 +3539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grappleLength: 2
+  initialRopeMultiplier: 2
   ropeSpeed: 5
   swingForce: 2
   grappleLayer:

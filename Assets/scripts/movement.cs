@@ -5,7 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour { 
 
     float directionX;
-    float walkSpeed = 6f;
+    float walkSpeed = 4f;
     
 
     // ground
@@ -51,7 +51,7 @@ public class movement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W) && isGround && canJump)
         {
-            jumpValue += .1f;
+            jumpValue += .06f;
         }
 
         if (Input.GetKeyDown(KeyCode.W) && isGround && canJump)
@@ -59,7 +59,7 @@ public class movement : MonoBehaviour {
             rb.velocity = new Vector2(.0f, rb.velocity.y);
         }
 
-        if (jumpValue >= 18f && isGround)
+        if (jumpValue >= 15f && isGround)
         {
             float tempX = directionX * walkSpeed;
             float tempY = jumpValue;
