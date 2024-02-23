@@ -17,7 +17,7 @@ public class sceneTransition : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("playScene");
+        SceneManager.LoadScene("TileMap");
     }
     public void ExitGame()
     {
