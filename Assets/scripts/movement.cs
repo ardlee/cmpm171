@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour { 
 
-    float directionX;
+    public float directionX;
     public float walkSpeed = 4f;
     
 
@@ -17,7 +17,7 @@ public class movement : MonoBehaviour {
     float jumpValue = .0f;
 
     // components player
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     public Transform foot;
     public LayerMask groundMask;
@@ -30,7 +30,7 @@ public class movement : MonoBehaviour {
 
     void Update()
     {
-        directionX = Input.GetAxis("Horizontal");
+        directionX = Input.GetAxisRaw("Horizontal");
 
 
         isGround = Physics2D.OverlapCircle(foot.position, ratioFoot, groundMask);

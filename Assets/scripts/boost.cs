@@ -28,7 +28,7 @@ public class boost : MonoBehaviour
             }
             else
             {
-                movement.walkSpeed = 6f;
+                movement.walkSpeed = 4f;
             }
         }
 
