@@ -31,6 +31,19 @@ public class movement : MonoBehaviour {
     void Update()
     {
         directionX = Input.GetAxisRaw("Horizontal");
+        // Store the current local scale
+        Vector3 currentScale = transform.localScale;
+
+        // Flip the sprite if moving left
+        if (directionX < 0 && currentScale.x > 0 && isGround)
+        {
+            transform.localScale = new Vector3(-currentScale.x, currentScale.y, currentScale.z);
+        }
+        // Flip the sprite if moving right
+        else if (directionX > 0 && currentScale.x < 0 && isGround)
+        {
+            transform.localScale = new Vector3(-currentScale.x, currentScale.y, currentScale.z);
+        }
 
 
         isGround = Physics2D.OverlapCircle(foot.position, ratioFoot, groundMask);
