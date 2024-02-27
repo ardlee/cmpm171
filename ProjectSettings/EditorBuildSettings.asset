@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/postStartScene.unity
     guid: e78dd537cf512d14d9eadea56af44e02
+  - enabled: 1
+    path: Assets/Scenes/TileMap.unity
+    guid: 0ed415c2d6161d848a40b3b6f5bef92c
   m_configObjects: {}
