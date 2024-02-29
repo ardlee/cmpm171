@@ -12,6 +12,12 @@ public class DisappearingPlatform : MonoBehaviour
 
     private List<Vector3Int> tilePositions = new List<Vector3Int>();
     private List<TileBase> originalTiles = new List<TileBase>();
+    private TilemapCollider2D tilemapCollider;
+
+    void Awake()
+    {
+        tilemapCollider = tilemap.GetComponent<TilemapCollider2D>();
+    }
 
     void Start()
     {
@@ -29,10 +35,14 @@ public class DisappearingPlatform : MonoBehaviour
             // Disappear
             yield return new WaitForSeconds(disappearTime);
             SetTiles(emptyTile);
+            // Disable the collider to allow player to pass through
+            tilemapCollider.enabled = false;
 
             // Reappear
             yield return new WaitForSeconds(appearTime);
             RestoreTiles();
+            // Enable the collider again
+            tilemapCollider.enabled = true;
         }
     }
 
