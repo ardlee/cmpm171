@@ -74,12 +74,13 @@ public class movement : MonoBehaviour {
 
         if (jumpValue >= 15f && isGround)
         {
-            float tempX = directionX * walkSpeed;
-            float tempY = jumpValue;
+            jumpValue = 15f;
+            //float tempX = directionX * walkSpeed;
+            //float tempY = jumpValue;
 
-            rb.velocity = new Vector2(tempX, tempY);
+            //rb.velocity = new Vector2(tempX, tempY);
 
-            Invoke("ResetJump", .2f);
+            //Invoke("ResetJump", .2f);
         }
 
         if (Input.GetKeyUp(KeyCode.W))
@@ -88,6 +89,7 @@ public class movement : MonoBehaviour {
             {
                 rb.velocity = new Vector2(directionX * walkSpeed, jumpValue);
                 jumpValue = .0f;
+
             }
             canJump = true;
         }
