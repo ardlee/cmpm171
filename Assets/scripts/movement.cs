@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class movement : MonoBehaviour { 
 
-    float directionX;
-    float walkSpeed = 6f;
+    public float directionX;
+    public float walkSpeed = 4f;
     
 
     // ground
@@ -17,7 +17,7 @@ public class movement : MonoBehaviour {
     float jumpValue = .0f;
 
     // components player
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     public Transform foot;
     public LayerMask groundMask;
@@ -30,7 +30,20 @@ public class movement : MonoBehaviour {
 
     void Update()
     {
-        directionX = Input.GetAxis("Horizontal");
+        directionX = Input.GetAxisRaw("Horizontal");
+        // Store the current local scale
+        Vector3 currentScale = transform.localScale;
+
+        // Flip the sprite if moving left
+        if (directionX < 0 && currentScale.x > 0 && isGround)
+        {
+            transform.localScale = new Vector3(-currentScale.x, currentScale.y, currentScale.z);
+        }
+        // Flip the sprite if moving right
+        else if (directionX > 0 && currentScale.x < 0 && isGround)
+        {
+            transform.localScale = new Vector3(-currentScale.x, currentScale.y, currentScale.z);
+        }
 
 
         isGround = Physics2D.OverlapCircle(foot.position, ratioFoot, groundMask);
@@ -51,7 +64,7 @@ public class movement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W) && isGround && canJump)
         {
-            jumpValue += .1f;
+            jumpValue += .06f;
         }
 
         if (Input.GetKeyDown(KeyCode.W) && isGround && canJump)
@@ -59,7 +72,7 @@ public class movement : MonoBehaviour {
             rb.velocity = new Vector2(.0f, rb.velocity.y);
         }
 
-        if (jumpValue >= 18f && isGround)
+        if (jumpValue >= 15f && isGround)
         {
             float tempX = directionX * walkSpeed;
             float tempY = jumpValue;
