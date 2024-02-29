@@ -32,7 +32,7 @@ public class Grappling : MonoBehaviour
     void Update()
     {
         // Check if the player is on the card that allows grappling\
-        if (cardManager != null && cardManager.currentcardIndex == 0 && cardManager.ammoCounts[cardManager.currentcardIndex] > 0)
+        if (cardManager != null && cardManager.currentcardIndex == 0 && cardManager.ammoCounts[cardManager.currentcardIndex] > -1)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
