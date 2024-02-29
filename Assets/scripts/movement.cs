@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class movement : MonoBehaviour { 
 
     public float directionX;
     public float walkSpeed = 4f;
     
+    public Image jumpFillImage;
 
     // ground
     bool isGround;
@@ -65,6 +66,7 @@ public class movement : MonoBehaviour {
         if (Input.GetKey(KeyCode.W) && isGround && canJump)
         {
             jumpValue += .06f;
+            jumpFillImage.fillAmount = jumpValue / 15f;
         }
 
         if (Input.GetKeyDown(KeyCode.W) && isGround && canJump)
@@ -89,7 +91,7 @@ public class movement : MonoBehaviour {
             {
                 rb.velocity = new Vector2(directionX * walkSpeed, jumpValue);
                 jumpValue = .0f;
-
+                jumpFillImage.fillAmount = 0f;
             }
             canJump = true;
         }
