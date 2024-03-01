@@ -54,6 +54,12 @@ public class movement : MonoBehaviour {
             rb.velocity = new Vector2(directionX * walkSpeed, rb.velocity.y);
         }
 
+        if (!isGround)
+        {
+            jumpValue = .0f;
+            jumpFillImage.fillAmount = .0f;
+        }
+
         if (jumpValue > 0)
         {
             rb.sharedMaterial = player_bounce;
@@ -84,6 +90,8 @@ public class movement : MonoBehaviour {
 
             //Invoke("ResetJump", .2f);
         }
+
+
 
         if (Input.GetKeyUp(KeyCode.W))
         {
