@@ -82,6 +82,8 @@ public class movement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.W) && isGround && canJump)
         {
             rb.velocity = new Vector2(.0f, rb.velocity.y);
+            animator.SetFloat("ChargeLevel", jumpValue);
+            animator.SetBool("isJumping", true);
         }
 
         if (jumpValue >= 15f && isGround)
@@ -104,14 +106,11 @@ public class movement : MonoBehaviour {
                 rb.velocity = new Vector2(directionX * walkSpeed, jumpValue);
                 jumpValue = .0f;
                 jumpFillImage.fillAmount = 0f;
+                animator.SetBool("isJumping", false);
             }
             canJump = true;
         }
+
     }
 
-    private void ResetJump()
-    {
-        canJump = false;
-        jumpValue = 0;
-    }
 }
