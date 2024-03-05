@@ -4,42 +4,45 @@ using UnityEngine;
 
 public class movingPlatform : MonoBehaviour
 {
-    public Transform start, end;
-    public int Speed;
-    Vector2 targetPos;
+    public Transform start; 
+    public Transform end;
+    public float speed = 2.0f;
 
-    void Start()
+    private Vector3 nextPosition;
+
+    public void Start()
     {
-        Debug.Log("Start position: " + start.position);
-        Debug.Log("End position: " + end.position);
-        targetPos = end.position;
+        nextPosition = end.position;
     }
 
-    private void Update()
+    public void Update()
+{
+    transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
+
+    // Check if the platform has reached near the next position
+    if (Vector3.Distance(transform.position, nextPosition) < 0.01f)
     {
-        if (Vector2.Distance(transform.position, start.position) < 0.1f)
-        {
-            targetPos = end.position;
-        }
-
-        if (Vector2.Distance(transform.position, end.position) < 0.1f)
-        {
-            targetPos = start.position;
-        }
-
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, Speed * Time.deltaTime);
+        // Toggle the next position between start and end
+        nextPosition = (nextPosition == start.position) ? end.position : start.position;
     }
+}
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            collision.transform.SetParent(this.transform); 
+            Debug.Log("Player collided with platform");
+            collision.gameObject.transform.parent = transform;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.transform.SetParent(null); 
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Player exited platform");
+            collision.gameObject.transform.parent = null;
+        }
     }
 }
