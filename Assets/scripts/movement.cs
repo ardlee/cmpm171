@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class movement : MonoBehaviour {
 
     // components player
     public Rigidbody2D rb;
+    private Animator animator;
 
     public Transform foot;
     public LayerMask groundMask;
@@ -27,6 +29,7 @@ public class movement : MonoBehaviour {
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>(); 
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -52,6 +55,7 @@ public class movement : MonoBehaviour {
         if (jumpValue == .0f && isGround)
         {
             rb.velocity = new Vector2(directionX * walkSpeed, rb.velocity.y);
+            animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
         }
 
         if (!isGround)
