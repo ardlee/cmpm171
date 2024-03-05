@@ -2752,6 +2752,10 @@ GameObject:
   - component: {fileID: 508979403}
   - component: {fileID: 508979402}
   - component: {fileID: 508979407}
+  - component: {fileID: 508979410}
+  - component: {fileID: 508979409}
+  - component: {fileID: 508979408}
+  - component: {fileID: 508979411}
   m_Layer: 0
   m_Name: NewPlayer
   m_TagString: Player
@@ -2919,6 +2923,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 64729888}
+  - {fileID: 2016199216}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &508979407
@@ -2942,6 +2947,80 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &508979408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508979401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8959b79286ea4b94fa1643aa96c09d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grappleLength: 2
+  initialRopeMultiplier: 2
+  ropeSpeed: 5
+  swingForce: 2
+  grappleLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  rope: {fileID: 2016199217}
+--- !u!114 &508979409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508979401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93292e5d18aa3ff43a51778454742c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &508979410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508979401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4d3a92889dbd94ab351cf9adbece99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards:
+  - {fileID: 952170335}
+  - {fileID: 1717901192}
+  - {fileID: 860849909}
+  ammoTexts:
+  - {fileID: 693259681}
+  - {fileID: 1779241558}
+  - {fileID: 25751685}
+  currentcardIndex: 0
+  ammoCounts: 
+--- !u!232 &508979411
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508979401}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 3
+  m_MaxDistanceOnly: 0
 --- !u!1 &570056186
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,7 +3724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Temp Card
+  m_text: Speed Boost
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3672,8 +3751,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14131,7 +14210,6 @@ Transform:
   m_LocalScale: {x: 3.9069846, y: 3.4955509, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2016199216}
   - {fileID: 404193649}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60265,11 +60343,11 @@ Transform:
   m_GameObject: {fileID: 2016199215}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.53749895, y: 6.064852, z: 0}
+  m_LocalPosition: {x: 0.20476131, y: 5.514489, z: 0}
   m_LocalScale: {x: 0.25595188, y: 0.28607795, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1221592141}
+  m_Father: {fileID: 508979406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &2016199217
 LineRenderer:
