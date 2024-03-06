@@ -61,10 +61,10 @@ public class cameraSwitcher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit");
+        //Debug.Log("hit");
         if (other.CompareTag("Player"))
         {
-            Debug.Log("hit");
+            //Debug.Log("hit");
             camold.SetActive(false);
             camnew.SetActive(true);
         }

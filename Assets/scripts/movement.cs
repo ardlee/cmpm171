@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class movement : MonoBehaviour { 
 
     public float directionX;
     public float walkSpeed = 4f;
     
+    public Image jumpFillImage;
 
     // ground
     bool isGround;
@@ -18,6 +20,7 @@ public class movement : MonoBehaviour {
 
     // components player
     public Rigidbody2D rb;
+    private Animator animator;
 
     public Transform foot;
     public LayerMask groundMask;
@@ -26,6 +29,7 @@ public class movement : MonoBehaviour {
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>(); 
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -51,6 +55,13 @@ public class movement : MonoBehaviour {
         if (jumpValue == .0f && isGround)
         {
             rb.velocity = new Vector2(directionX * walkSpeed, rb.velocity.y);
+            animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+        }
+
+        if (!isGround)
+        {
+            jumpValue = .0f;
+            jumpFillImage.fillAmount = .0f;
         }
 
         if (jumpValue > 0)
@@ -64,23 +75,29 @@ public class movement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W) && isGround && canJump)
         {
-            jumpValue += .06f;
+            jumpValue += .06f;  
+            jumpFillImage.fillAmount = jumpValue / 15f;
         }
 
         if (Input.GetKeyDown(KeyCode.W) && isGround && canJump)
         {
             rb.velocity = new Vector2(.0f, rb.velocity.y);
+            animator.SetFloat("ChargeLevel", jumpValue);
+            animator.SetBool("isJumping", true);
         }
 
         if (jumpValue >= 15f && isGround)
         {
-            float tempX = directionX * walkSpeed;
-            float tempY = jumpValue;
+            jumpValue = 15f;
+            //float tempX = directionX * walkSpeed;
+            //float tempY = jumpValue;
 
-            rb.velocity = new Vector2(tempX, tempY);
+            //rb.velocity = new Vector2(tempX, tempY);
 
-            Invoke("ResetJump", .2f);
+            //Invoke("ResetJump", .2f);
         }
+
+
 
         if (Input.GetKeyUp(KeyCode.W))
         {
@@ -88,14 +105,12 @@ public class movement : MonoBehaviour {
             {
                 rb.velocity = new Vector2(directionX * walkSpeed, jumpValue);
                 jumpValue = .0f;
+                jumpFillImage.fillAmount = 0f;
+                animator.SetBool("isJumping", false);
             }
             canJump = true;
         }
+
     }
 
-    private void ResetJump()
-    {
-        canJump = false;
-        jumpValue = 0;
-    }
 }
