@@ -34,6 +34,9 @@ public class movingPlatform : MonoBehaviour
         {
             Debug.Log("Player collided with platform");
             collision.gameObject.transform.parent = transform;
+            Rigidbody2D pRb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            pRb.interpolation = RigidbodyInterpolation2D.None;
         }
     }
 
@@ -43,6 +46,10 @@ public class movingPlatform : MonoBehaviour
         {
             Debug.Log("Player exited platform");
             collision.gameObject.transform.parent = null;
+
+            Rigidbody2D pRb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            pRb.interpolation = RigidbodyInterpolation2D.Interpolate;
         }
     }
 }
