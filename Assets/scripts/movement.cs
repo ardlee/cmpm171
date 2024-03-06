@@ -75,7 +75,7 @@ public class movement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W) && isGround && canJump)
         {
-            jumpValue += .06f;
+            jumpValue += .06f;  
             jumpFillImage.fillAmount = jumpValue / 15f;
         }
 
