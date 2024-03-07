@@ -2960,14 +2960,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8959b79286ea4b94fa1643aa96c09d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grappleLength: 2
-  initialRopeMultiplier: 2
+  mainCamera: {fileID: 1818717452}
+  _lineRenderer: {fileID: 2016199217}
+  _distanceJoint: {fileID: 508979411}
+  grappleLength: 0
   ropeSpeed: 5
-  swingForce: 2
-  grappleLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  rope: {fileID: 2016199217}
+  swingForce: 20
 --- !u!114 &508979409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3009,7 +3007,7 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508979401}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
@@ -14303,14 +14301,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8959b79286ea4b94fa1643aa96c09d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grappleLength: 2
-  initialRopeMultiplier: 2
+  mainCamera: {fileID: 0}
+  _lineRenderer: {fileID: 0}
+  _distanceJoint: {fileID: 0}
+  grappleLength: 0
   ropeSpeed: 5
-  swingForce: 2
-  grappleLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  rope: {fileID: 2016199217}
+  swingForce: 20
 --- !u!114 &1221592145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60426,7 +60422,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
