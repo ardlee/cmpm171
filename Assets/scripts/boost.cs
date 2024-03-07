@@ -28,9 +28,7 @@ public class boost : MonoBehaviour
                 startTime = Time.time;
                 boostActive = true;
                 movement.walkSpeed = 12f;
-            }
-
-           
+            }     
         }
 
         if (boostActive && Time.time - startTime >= timer)
