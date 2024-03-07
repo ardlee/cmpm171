@@ -43,7 +43,7 @@ public class postStart : MonoBehaviour
     public void levelSelect()
     {
         levelSelection.SetActive(true);
-        isStart = true;
+        isStart = true; 
         GameMenu.SetActive(false);
     }
 
