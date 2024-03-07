@@ -13,18 +13,28 @@ public class Grappling : MonoBehaviour
     
     [SerializeField] private float ropeSpeed = 5f;
     [SerializeField] private float swingForce = 20f;
+    private cardManager cardManager;
+    private movement movement;
+
+    float timer = 5f;
+    float startTime;
 
     // Start is called before the first frame update
     void Start()
     {
         _distanceJoint.enabled = false;
+        cardManager = GetComponent<cardManager>();
+        movement = GetComponent<movement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (cardManager != null && cardManager.currentcardIndex == 0 && cardManager.ammoCounts[cardManager.currentcardIndex] > 0)
         {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            startTime = Time.time;
             Vector2 mousePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
             _lineRenderer.SetPosition(0, mousePos);
             _lineRenderer.SetPosition(1, transform.position);
@@ -32,12 +42,23 @@ public class Grappling : MonoBehaviour
             _distanceJoint.enabled = true;
             _lineRenderer.enabled = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             _distanceJoint.enabled = false;
             _lineRenderer.enabled = false;
         }
-        if (_distanceJoint.enabled) 
+
+        
+    }
+    if (_distanceJoint.enabled && Time.time - startTime >= timer)
+            {
+            _distanceJoint.enabled = false;
+            _lineRenderer.enabled = false;
+            }
+    if(Input.GetKeyDown(KeyCode.Space)){
+        Debug.Log(_distanceJoint.enabled);
+    }
+    if (_distanceJoint.enabled) 
         {
             _lineRenderer.SetPosition(1, transform.position);
             float ropeInput = Input.GetAxis("Vertical");
@@ -49,7 +70,12 @@ public class Grappling : MonoBehaviour
             Vector2 swingForceVector = new Vector2(swingInput * swingForce, 0f);
             GetComponent<Rigidbody2D>().AddForce(swingForceVector, ForceMode2D.Force);
         }
-        
+    if (Input.GetKeyUp(KeyCode.Space))
+        {
+            _distanceJoint.enabled = false;
+            _lineRenderer.enabled = false;
+        }
     }
+    
 
 }
