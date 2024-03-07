@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 
 public class postStart : MonoBehaviour
 {
@@ -22,6 +29,7 @@ public class postStart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             BackToStartLevelSelection();
+            BackToStartOptionSelection();
         }
     }
 
@@ -37,6 +45,7 @@ public class postStart : MonoBehaviour
         option.SetActive(false);
         isStart = false;
         GameMenu.SetActive(true);
+        Debug.Log("option working");
     }
 
 
@@ -52,10 +61,15 @@ public class postStart : MonoBehaviour
         levelSelection.SetActive(false);
         isStart = false;
         GameMenu.SetActive(true);
+        Debug.Log("level selection working");
     }
 
-    public void BacktoMainMenu()
+    public void exitButton()
     {
-        //SceneManager.LoadScene("mainMenu");
+        #if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }
