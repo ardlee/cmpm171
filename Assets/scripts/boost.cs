@@ -30,11 +30,13 @@ public class boost : MonoBehaviour
                 movement.walkSpeed = 12f;
             }
 
-            if (boostActive && Time.time - startTime >= timer)
-            {
-                boostActive = false;
-                movement.walkSpeed = 4f;
-            }
+           
+        }
+
+        if (boostActive && Time.time - startTime >= timer)
+        {
+            boostActive = false;
+            movement.walkSpeed = 4f;
         }
     }
 }
