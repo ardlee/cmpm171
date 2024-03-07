@@ -1,37 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class postStart : MonoBehaviour
 {
-    public GameObject selection;
+    public GameObject levelSelection;
     public GameObject GameMenu;
+    public GameObject option;
+
     public bool isStart = false;
     // Start is called before the first frame update
     void Start()
     {
-        selection.SetActive(false);
+        levelSelection.SetActive(false);
+        option.SetActive(false);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            BackToPostStart();
+            BackToStartLevelSelection();
         }
     }
 
-    public void levelSelect()
+    public void optionSelection()
     {
-        selection.SetActive(true);
+        option.SetActive(true);
         isStart = true;
         GameMenu.SetActive(false);
     }
 
-    public void BackToPostStart()
+    public void BackToStartOptionSelection()
     {
-        selection.SetActive(false);
+        option.SetActive(false);
+        isStart = false;
+        GameMenu.SetActive(true);
+    }
+
+
+    public void levelSelect()
+    {
+        levelSelection.SetActive(true);
+        isStart = true;
+        GameMenu.SetActive(false);
+    }
+
+    public void BackToStartLevelSelection()
+    {
+        levelSelection.SetActive(false);
         isStart = false;
         GameMenu.SetActive(true);
     }
