@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Localization Table_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: e779695a8675a4d46908b3ceecdde62f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 23366205440
+    m_Localized: '            S t a r t  G a m e'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2251720228864
+    m_Localized: '            S e t t i n g s
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5462275391488
+    m_Localized: '            L e a d e r b o a r d '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6376574943232
+    m_Localized: '            C r e d i t s'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6654162370560
+    m_Localized: '           E x i t  G a m e'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7536572628992
+    m_Localized: '     N E W  G A M E'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

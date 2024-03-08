@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Localization Table Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Localization Table
+  m_TableCollectionNameGuidString: e779695a8675a4d46908b3ceecdde62f
+  m_Entries:
+  - m_Id: 23366205440
+    m_Key: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2251720228864
+    m_Key: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5462275391488
+    m_Key: Leaderboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6376574943232
+    m_Key: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6654162370560
+    m_Key: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7536572628992
+    m_Key: New Game
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 354641011616776216
+  references:
+    version: 2
+    RefIds:
+    - rid: 354641011616776216
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1709673047211
