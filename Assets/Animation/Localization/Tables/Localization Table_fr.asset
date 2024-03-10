@@ -10,36 +10,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Localization Table_es
+  m_Name: Localization Table_fr
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: es
+    m_Code: fr
   m_SharedData: {fileID: 11400000, guid: e779695a8675a4d46908b3ceecdde62f, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
   - m_Id: 23366205440
-    m_Localized: '           E m p e z a r'
+    m_Localized: '            C o m m e n c e r'
     m_Metadata:
       m_Items: []
   - m_Id: 2251720228864
-    m_Localized: '           A j u s t e s'
+    m_Localized: "P A R A M \xC8 T R E S\n"
     m_Metadata:
       m_Items: []
   - m_Id: 5462275391488
-    m_Localized: '           M a r c a d o r'
+    m_Localized: 'M A R Q U E U R           '
     m_Metadata:
       m_Items: []
   - m_Id: 6376574943232
-    m_Localized: "           C r \xE9 d i t o s"
+    m_Localized: "C R \xC9 D I T S"
     m_Metadata:
       m_Items: []
   - m_Id: 6654162370560
-    m_Localized: '           S a l i r'
+    m_Localized: Q U I T T E R
     m_Metadata:
       m_Items: []
   - m_Id: 7536572628992
-    m_Localized: '     N U E V O  J U E G O'
+    m_Localized: N O U V E A U  J E U
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1554204505931776
+    m_Localized: 'C O N T I N U O N S  '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1556787769376768
+    m_Localized: N I V E A U X
     m_Metadata:
       m_Items: []
   references:
