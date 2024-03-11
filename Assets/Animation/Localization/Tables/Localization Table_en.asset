@@ -10,36 +10,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Localization Table_fr
+  m_Name: Localization Table_en
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: fr
+    m_Code: en
   m_SharedData: {fileID: 11400000, guid: e779695a8675a4d46908b3ceecdde62f, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
   - m_Id: 23366205440
-    m_Localized: '            C o m m e n c e r'
+    m_Localized: '            S t a r t  G a m e'
     m_Metadata:
       m_Items: []
   - m_Id: 2251720228864
-    m_Localized: "            P a r a m \xE8 t r e s\n"
+    m_Localized: S E T T I N G S
     m_Metadata:
       m_Items: []
   - m_Id: 5462275391488
-    m_Localized: '           M a r q u e u r'
+    m_Localized: L E A D E R B O A R D
     m_Metadata:
       m_Items: []
   - m_Id: 6376574943232
-    m_Localized: "            C r \xE9 d i t s"
+    m_Localized: 'C R E D I T S '
     m_Metadata:
       m_Items: []
   - m_Id: 6654162370560
-    m_Localized: '            Q u i t t e r'
+    m_Localized: 'E X I T  G A M E '
     m_Metadata:
       m_Items: []
   - m_Id: 7536572628992
-    m_Localized: '     N O U V E A U  J E U'
+    m_Localized: N E W  G A M E
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1554204505931776
+    m_Localized: C O N T I N U E
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1556787769376768
+    m_Localized: L E V E L S
     m_Metadata:
       m_Items: []
   references:
