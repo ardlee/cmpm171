@@ -50,6 +50,22 @@ MonoBehaviour:
     m_Localized: N I V E L E S
     m_Metadata:
       m_Items: []
+  - m_Id: 2513153396834304
+    m_Localized: Pantalla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2514190228783104
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2514568391426048
+    m_Localized: Lengua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2515340562792448
+    m_Localized: Seleccionar un idioma
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
