@@ -1,5 +1,126 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8709028831503419060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Moving platform/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 962586112
+    data2: 3484966744
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Value A
+  - Value B
+  - Value C
+  Exists: 1
+--- !u!114 &-6558644883813970862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../hw/abrakajumpa_fmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638458791351269920
+  FileSizes:
+  - Name: Desktop
+    Value: 1138
+  Exists: 1
+--- !u!114 &-1845301652336087157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 864527070
+    data2: 1178628448
+  Type: 0
+  IsGlobal: 0
+  Labels:
+  - Grass
+  - Metal
+  - Ice
+  Exists: 1
+--- !u!114 &-1614068523942257838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../hw/abrakajumpa_fmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638458791351259842
+  FileSizes:
+  - Name: Desktop
+    Value: 1340
+  Exists: 1
+--- !u!114 &-698156075147049328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/walk/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 864527070
+    data2: 1178628448
+  Type: 0
+  IsGlobal: 0
+  Labels:
+  - Grass
+  - Metal
+  - Ice
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +133,178 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: -6558644883813970862}
+  - {fileID: -1614068523942257838}
+  - {fileID: 185772587376192098}
+  EditorEvents:
+  - {fileID: 5133161876017494979}
+  - {fileID: 2975298809412126344}
+  - {fileID: 6278859036202622993}
+  - {fileID: 3386019578041687018}
+  - {fileID: 5097198935649175796}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
+  MasterBanks:
+  - {fileID: -1614068523942257838}
+  StringsBanks:
+  - {fileID: -6558644883813970862}
+  cacheTime: 638458824624517907
   cacheVersion: 131616
+--- !u!114 &185772587376192098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sfx.bank
+  m_EditorClassIdentifier: 
+  Path: ../../hw/abrakajumpa_fmod/Build/Desktop/sfx.bank
+  Name: sfx
+  StudioPath: bank:/sfx
+  lastModified: 638458824624517907
+  FileSizes:
+  - Name: Desktop
+    Value: 5314688
+  Exists: 1
+--- !u!114 &2975298809412126344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/victory
+  m_EditorClassIdentifier: 
+  Path: event:/victory
+  Guid:
+    Data1: -1105872842
+    Data2: 1127973198
+    Data3: -693463654
+    Data4: -1562542929
+  Banks:
+  - {fileID: 185772587376192098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3386019578041687018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/walk
+  m_EditorClassIdentifier: 
+  Path: event:/walk
+  Guid:
+    Data1: 797457449
+    Data2: 1174927316
+    Data3: 1768117380
+    Data4: -492566006
+  Banks:
+  - {fileID: 185772587376192098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -698156075147049328}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16965
+--- !u!114 &5097198935649175796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Charge
+  m_EditorClassIdentifier: 
+  Path: event:/Charge
+  Guid:
+    Data1: -48988987
+    Data2: 1187482014
+    Data3: 377392538
+    Data4: 601888466
+  Banks:
+  - {fileID: 185772587376192098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &5133161876017494979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience
+  Guid:
+    Data1: 109580833
+    Data2: 1278063833
+    Data3: -1604821605
+    Data4: 870600464
+  Banks:
+  - {fileID: 185772587376192098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1845301652336087157}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 191756
+--- !u!114 &6278859036202622993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Moving platform
+  m_EditorClassIdentifier: 
+  Path: event:/Moving platform
+  Guid:
+    Data1: 971296948
+    Data2: 1147667259
+    Data3: 218985619
+    Data4: 46027069
+  Banks:
+  - {fileID: 185772587376192098}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8709028831503419060}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000

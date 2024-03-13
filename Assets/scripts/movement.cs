@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMOD.Studio;
 public class movement : MonoBehaviour { 
 
     public float directionX;
@@ -26,10 +27,16 @@ public class movement : MonoBehaviour {
     public LayerMask groundMask;
     public PhysicsMaterial2D player_bounce, player_mat;
 
+    // audio
+    private EventInstance playerFootsteps;
+    private EventInstance charge;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>(); 
         animator = GetComponent<Animator>();
+        playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
+        charge = AudioManager.instance.CreateInstance(FMODEvents.instance.charge);
     }
 
     void Update()
@@ -111,6 +118,45 @@ public class movement : MonoBehaviour {
             canJump = true;
         }
 
+        UpdateSound();
+
+    }
+    private void UpdateSound()
+    {
+        // start footsteps event if the player has an x velocity and is on the ground
+        if (rb.velocity.x != 0 && isGround && !Input.GetKey(KeyCode.W))
+        {
+            // get the playback state
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+            float volume = 0.2f;
+            playerFootsteps.setVolume(volume);
+        }
+        // otherwise, stop the footsteps event
+        else
+        {
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+
+        if (Input.GetKey(KeyCode.W) && isGround)
+        {
+            PLAYBACK_STATE chargePlaybackState;
+            charge.getPlaybackState(out chargePlaybackState);
+            if (chargePlaybackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                charge.start();
+            }
+            float volume = 0.2f;
+            charge.setVolume(volume);
+        }
+        else
+        {
+            charge.stop(STOP_MODE.ALLOWFADEOUT);
+        }
     }
 
 }

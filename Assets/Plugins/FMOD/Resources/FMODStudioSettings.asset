@@ -234,8 +234,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: ../../hw/abrakajumpa_fmod/abrakajumpa_fmod.fspro
+  sourceBankPath: ../../hw/abrakajumpa_fmod/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -256,8 +256,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - sfx
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -270,20 +272,20 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131616
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131616
   Platforms:
-  - {fileID: 4302780933246841858}
   - {fileID: -3681763712108555989}
+  - {fileID: -3036662663088779330}
+  - {fileID: -2977065222354326676}
   - {fileID: 944985936892687944}
   - {fileID: 2042928473164661883}
-  - {fileID: 6666158646231046816}
   - {fileID: 2064259936080776975}
-  - {fileID: -2977065222354326676}
-  - {fileID: 6202425321307775512}
   - {fileID: 2622550247071090232}
+  - {fileID: 4302780933246841858}
   - {fileID: 4605422889775354804}
-  - {fileID: -3036662663088779330}
+  - {fileID: 6202425321307775512}
+  - {fileID: 6666158646231046816}
   MigratedPlatforms: 0500000012000000060000000b000000080000000a000000090000000c000000150000000200000001000000
 --- !u!114 &944985936892687944
 MonoBehaviour:
@@ -720,15 +722,15 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - fd7c55dab0fce234b8c25f6ffca523c1
   - e7a046c753c3c3d4aacc91f6597f310d
+  - 52eb9df5db46521439908db3a29a1bbb
   - c88d16e5272a4e241b0ef0ac2e53b73d
   - 0f8eb3f400726694eb47beb1a9f94ce8
-  - 2c5177b11d81d824dbb064f9ac8527da
   - b7716510a1f36934c87976f3a81dbf3d
-  - 52eb9df5db46521439908db3a29a1bbb
-  - 2fea114e74ecf3c4f920e1d5cc1c4c40
   - 46fbfdf3fc43db0458918377fd40293e
+  - fd7c55dab0fce234b8c25f6ffca523c1
+  - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - 2c5177b11d81d824dbb064f9ac8527da
   codecChannels:
     Value: []
     HasValue: 0
