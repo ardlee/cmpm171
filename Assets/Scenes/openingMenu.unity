@@ -325,7 +325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: French
+  m_text: "Fran\xE7ais"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a925d2ea11e786f42ae07b5d48f224a5, type: 2}
   m_sharedMaterial: {fileID: -135735009707870962, guid: a925d2ea11e786f42ae07b5d48f224a5, type: 2}
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Spanish
+  m_text: "Espa\xF1ol"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a925d2ea11e786f42ae07b5d48f224a5, type: 2}
   m_sharedMaterial: {fileID: -135735009707870962, guid: a925d2ea11e786f42ae07b5d48f224a5, type: 2}
@@ -1413,7 +1413,7 @@ Transform:
   m_GameObject: {fileID: 1907471191}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 319.8344, y: 154.37015, z: 0.18267483}
+  m_LocalPosition: {x: 319.8344, y: 168, z: 0.18267483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

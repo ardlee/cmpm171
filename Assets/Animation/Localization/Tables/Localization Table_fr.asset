@@ -50,6 +50,22 @@ MonoBehaviour:
     m_Localized: N I V E A U X
     m_Metadata:
       m_Items: []
+  - m_Id: 2513153396834304
+    m_Localized: "\xC9cran"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2514190228783104
+    m_Localized: "Contr\xF4les"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2514568391426048
+    m_Localized: Langue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2515340562792448
+    m_Localized: "S\xE9lectionner une langue "
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
