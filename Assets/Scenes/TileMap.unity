@@ -786,7 +786,7 @@ MonoBehaviour:
   tilemap: {fileID: 327105143}
   emptyTile: {fileID: 11400000, guid: 7a97dc311db69904f9669aea16645471, type: 2}
   disappearTime: 3
-  appearTime: 2
+  appearTime: 5
 --- !u!483693784 &327105142
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   tilemap: {fileID: 483488448}
   emptyTile: {fileID: 11400000, guid: 7a97dc311db69904f9669aea16645471, type: 2}
   disappearTime: 4
-  appearTime: 3
+  appearTime: 5
 --- !u!483693784 &483488447
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2844,7 +2844,7 @@ MonoBehaviour:
   tilemap: {fileID: 497098661}
   emptyTile: {fileID: 11400000, guid: 7a97dc311db69904f9669aea16645471, type: 2}
   disappearTime: 4
-  appearTime: 3
+  appearTime: 5
 --- !u!483693784 &497098660
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -5417,7 +5417,7 @@ MonoBehaviour:
   tilemap: {fileID: 962106877}
   emptyTile: {fileID: 11400000, guid: 7a97dc311db69904f9669aea16645471, type: 2}
   disappearTime: 2
-  appearTime: 2
+  appearTime: 5
 --- !u!483693784 &962106876
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -16206,7 +16206,7 @@ MonoBehaviour:
   tilemap: {fileID: 1618515132}
   emptyTile: {fileID: 11400000, guid: 7a97dc311db69904f9669aea16645471, type: 2}
   disappearTime: 3
-  appearTime: 2
+  appearTime: 5
 --- !u!483693784 &1618515131
 TilemapRenderer:
   m_ObjectHideFlags: 0
