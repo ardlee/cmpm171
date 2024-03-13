@@ -17,7 +17,10 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Victory SFX")]
     [field: SerializeField] public EventReference victorySound { get; private set; }
 
-   
+    [field: Header("Gears SFX")]
+    [field: SerializeField] public EventReference MovingPlatforms { get; private set; }
+
+
 
     public static FMODEvents instance { get; private set; }
 
