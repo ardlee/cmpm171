@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.SocialPlatforms;
 
 public class onTopFinish : MonoBehaviour
 {
+
     public GameObject openCanvas;
 
     public void Start()
@@ -21,6 +23,7 @@ public class onTopFinish : MonoBehaviour
             Time.timeScale = 0.0f;
             openCanvas.SetActive(true);
             Debug.Log("working2");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.victorySound, this.transform.position);
         }
     }
 
