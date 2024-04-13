@@ -234,8 +234,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../hw/abrakajumpa_fmod/abrakajumpa_fmod.fspro
-  sourceBankPath: ../../hw/abrakajumpa_fmod/Build
+  sourceProjectPath: ../../misc/abrakajumpa_fmod/abrakajumpa_fmod.fspro
+  sourceBankPath: ../../misc/abrakajumpa_fmod/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
