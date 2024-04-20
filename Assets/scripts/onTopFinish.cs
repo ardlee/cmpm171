@@ -9,6 +9,7 @@ public class onTopFinish : MonoBehaviour
 {
 
     public GameObject openCanvas;
+    public Timer timerScript; // Reference to the Timer script
 
     public void Start()
     {
@@ -24,6 +25,7 @@ public class onTopFinish : MonoBehaviour
             openCanvas.SetActive(true);
             Debug.Log("working2");
             AudioManager.instance.PlayOneShot(FMODEvents.instance.victorySound, this.transform.position);
+            timerScript.enabled = false;
         }
     }
 
