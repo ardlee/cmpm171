@@ -19268,6 +19268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fce2f77469b0964a9d7ee7eea507c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerScript: {fileID: 1090407622}
   inputScore: {fileID: 1855194065}
   inputName: {fileID: 1895576060}
   submitScoreEvent:
