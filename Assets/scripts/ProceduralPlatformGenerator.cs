@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,10 +13,10 @@ public class ProceduralPlatformGenerator : MonoBehaviour
     public int mapHeight = 10;
     public int platformWidth = 3;
 
-    public int minSeparationHorizontal = 3;
-    public int maxSeparationHorizontal = 7;
-    public int minSeparationVertical = 3;
-    public int maxSeparationVertical = 7;
+    public int minSeparationHorizontal = 6;
+    public int maxSeparationHorizontal = 14; 
+    public int minSeparationVertical = 2;
+    public int maxSeparationVertical = 4;
 
     void Start()
     {
@@ -33,18 +35,31 @@ public class ProceduralPlatformGenerator : MonoBehaviour
         // Generate base platform at height 0
         GenerateBasePlatform();
 
-        // Generate additional platforms throughout the map
-        for (int x = 0; x < mapWidth; x++)
+        // base 1 to avoid generating on the base platform
+        int y = 5; 
+
+        while (y < mapHeight)
         {
-            for (int y = 0; y < mapHeight; y++)
+            // platdform encounterer per row. For example 1-2 platforms per row (range)
+            int platformsInThisRow = UnityEngine.Random.Range(1, 3); 
+            List<int> usedPositions = new List<int>();
+
+            for (int i = 0; i < platformsInThisRow; i++)
             {
-                // Check if this position is suitable for a platform and not on the base platform
-                if (IsPlatformPosition(x, y) && !IsOnBasePlatform(x, y))
+                int x = UnityEngine.Random.Range(0, mapWidth - platformWidth);
+
+                // if position is close to others in a row
+                if (usedPositions.Any(pos => Mathf.Abs(pos - x) < minSeparationHorizontal))
                 {
-                    // Generate platform at this position
-                    GeneratePlatform(x, y);
+                    continue;
                 }
+
+                GeneratePlatform(x, y);
+                usedPositions.Add(x);
             }
+
+            // create separation based on player's jump
+            y += UnityEngine.Random.Range(minSeparationVertical, maxSeparationVertical + 1);
         }
     }
 
@@ -64,26 +79,5 @@ public class ProceduralPlatformGenerator : MonoBehaviour
             Vector3Int tilePosition = new Vector3Int(x, startY, 0);
             tilemap.SetTile(tilePosition, platformTile);
         }
-    }
-
-    bool IsPlatformPosition(int x, int y)
-    {
-        // Check if the position is within the map bounds
-        if (x + platformWidth > mapWidth || y + 1 > mapHeight)
-        {
-            return false;
-        }
-
-        // Check horizontal and vertical separations
-        int horizontalSeparation = Random.Range(minSeparationHorizontal, maxSeparationHorizontal + 1);
-        int verticalSeparation = Random.Range(minSeparationVertical, maxSeparationVertical + 1);
-
-        return (x % horizontalSeparation == 0) && (y % verticalSeparation == 0);
-    }
-
-    bool IsOnBasePlatform(int x, int y)
-    {
-        // Check if the position is on the base platform
-        return y == 0 && x >= 0 && x < mapWidth;
     }
 }
