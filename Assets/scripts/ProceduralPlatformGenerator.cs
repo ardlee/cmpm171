@@ -35,7 +35,7 @@ public class ProceduralPlatformGenerator : MonoBehaviour
         // Generate base platform at height 0
         GenerateBasePlatform();
 
-        // base 1 to avoid generating on the base platform
+        // base 5 to avoid generating on the base platform
         int y = 5; 
 
         while (y < mapHeight)
