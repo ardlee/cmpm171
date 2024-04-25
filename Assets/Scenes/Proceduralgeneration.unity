@@ -423,7 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 172556483}
   - component: {fileID: 172556482}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ProceduralPlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,13 +445,13 @@ MonoBehaviour:
   tilemap: {fileID: 1574535329}
   basePlatformTile: {fileID: 11400000, guid: 767b8eb58d8f3ea4398dfdb05470ba3c, type: 2}
   platformTile: {fileID: 11400000, guid: eadd68b84993f3e4db202ecd90cc20b6, type: 2}
-  mapWidth: 50
+  mapWidth: 49
   mapHeight: 95
   platformWidth: 3
-  minSeparationHorizontal: 5
-  maxSeparationHorizontal: 7
-  minSeparationVertical: 9
-  maxSeparationVertical: 10
+  minSeparationHorizontal: 2
+  maxSeparationHorizontal: 4
+  minSeparationVertical: 3
+  maxSeparationVertical: 6
 --- !u!4 &172556483
 Transform:
   m_ObjectHideFlags: 0
@@ -2358,7 +2358,7 @@ GameObject:
   - component: {fileID: 1485492753}
   - component: {fileID: 1485492755}
   - component: {fileID: 1485492754}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2480,8 +2480,8 @@ GameObject:
   - component: {fileID: 1574535328}
   - component: {fileID: 1574535331}
   - component: {fileID: 1574535330}
-  m_Layer: 0
-  m_Name: Platforms
+  m_Layer: 3
+  m_Name: atformsms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3123,7 +3123,7 @@ MonoBehaviour:
   directionX: 0
   walkSpeed: 4
   jumpFillImage: {fileID: 1805784962}
-  rb: {fileID: 0}
+  rb: {fileID: 2111345544}
   foot: {fileID: 1723013576}
   groundMask:
     serializedVersion: 2

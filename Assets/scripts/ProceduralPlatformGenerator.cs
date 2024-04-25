@@ -22,46 +22,50 @@ public class ProceduralPlatformGenerator : MonoBehaviour
     {
         GeneratePlatforms();
     }
-
+    
     void GeneratePlatforms()
+{
+    // Ensure the Tilemap is not null
+    if (tilemap == null)
     {
-        // Ensure the Tilemap is not null
-        if (tilemap == null)
+        Debug.LogError("Tilemap is not assigned!");
+        return;
+    }
+
+    // Generate base platform at height 0
+    GenerateBasePlatform();
+
+    int y = 3; // Start at a specific height
+
+    while (y < mapHeight)
+    {
+        // Reduce the range of platforms per row
+        int platformsInThisRow = UnityEngine.Random.Range(1, 3); 
+        List<int> usedPositions = new List<int>();
+
+        for (int i = 0; i < platformsInThisRow; i++)
         {
-            Debug.LogError("Tilemap is not assigned!");
-            return;
-        }
+            int x = UnityEngine.Random.Range(0, mapWidth - platformWidth);
 
-        // Generate base platform at height 0
-        GenerateBasePlatform();
-
-        // base 5 to avoid generating on the base platform
-        int y = 5; 
-
-        while (y < mapHeight)
-        {
-            // platdform encounterer per row. For example 1-2 platforms per row (range)
-            int platformsInThisRow = UnityEngine.Random.Range(1, 3); 
-            List<int> usedPositions = new List<int>();
-
-            for (int i = 0; i < platformsInThisRow; i++)
+            // Check if position is close to others in a row
+            if (usedPositions.Any(pos => Mathf.Abs(pos - x) < minSeparationHorizontal))
             {
-                int x = UnityEngine.Random.Range(0, mapWidth - platformWidth);
-
-                // if position is close to others in a row
-                if (usedPositions.Any(pos => Mathf.Abs(pos - x) < minSeparationHorizontal))
-                {
-                    continue;
-                }
-
-                GeneratePlatform(x, y);
-                usedPositions.Add(x);
+                continue;
             }
 
-            // create separation based on player's jump
-            y += UnityEngine.Random.Range(minSeparationVertical, maxSeparationVertical + 1);
+            GeneratePlatform(x, y);
+            usedPositions.Add(x);
+
+            // Add additional spacing after each platform
+            x += UnityEngine.Random.Range(minSeparationHorizontal, maxSeparationHorizontal + 1);
         }
+
+        // Reduce the vertical separation range for more frequent platforms
+        y += UnityEngine.Random.Range(minSeparationVertical, maxSeparationVertical - 1);
     }
+}
+
+
 
     void GenerateBasePlatform()
     {
