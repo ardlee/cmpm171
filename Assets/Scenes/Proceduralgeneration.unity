@@ -445,13 +445,13 @@ MonoBehaviour:
   tilemap: {fileID: 1574535329}
   basePlatformTile: {fileID: 11400000, guid: 767b8eb58d8f3ea4398dfdb05470ba3c, type: 2}
   platformTile: {fileID: 11400000, guid: eadd68b84993f3e4db202ecd90cc20b6, type: 2}
-  mapWidth: 49
-  mapHeight: 95
+  mapWidth: 24
+  mapHeight: 45
   platformWidth: 3
-  minSeparationHorizontal: 2
-  maxSeparationHorizontal: 4
+  minSeparationHorizontal: 1
+  maxSeparationHorizontal: 3
   minSeparationVertical: 3
-  maxSeparationVertical: 6
+  maxSeparationVertical: 3
 --- !u!4 &172556483
 Transform:
   m_ObjectHideFlags: 0
@@ -2005,7 +2005,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be4051b985b44654084a07910ace7ae5, type: 2}
   rightTilesSection3:
   - {fileID: 11400000, guid: be4051b985b44654084a07910ace7ae5, type: 2}
-  mapHeight: 100
+  mapHeight: 50
 --- !u!4 &1358898623
 Transform:
   m_ObjectHideFlags: 0
@@ -3035,8 +3035,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7220f37a6b06a0a41b90ca6a495d9e57, type: 2}
   section3Tiles:
   - {fileID: 11400000, guid: 7a97dc311db69904f9669aea16645471, type: 2}
-  mapWidth: 50
-  mapHeight: 100
+  mapWidth: 25
+  mapHeight: 50
   numSections: 3
   sectionHeight: 0
 --- !u!4 &2138814616

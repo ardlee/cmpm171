@@ -45,7 +45,7 @@ public class ProceduralWallsGenerator : MonoBehaviour
         tilemap.SetTile(leftTilePosition, leftTile);
 
         // Set right wall tile at the specified position
-        Vector3Int rightTilePosition = new Vector3Int(49, y, 0); // Assuming the right wall is at position 49
+        Vector3Int rightTilePosition = new Vector3Int(24, y, 0); // Assuming the right wall is at position 49
         TileBase rightTile = GetRandomRightTile(sectionIndex);
         tilemap.SetTile(rightTilePosition, rightTile);
     }
