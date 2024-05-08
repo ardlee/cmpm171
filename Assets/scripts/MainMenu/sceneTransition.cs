@@ -28,6 +28,16 @@ public class sceneTransition : MonoBehaviour
         #endif
     }
 
+    public void StartStealthGame()
+    {
+        SceneManager.LoadScene("StealthScene");
+    }
+
+    public void StartPCGGame()
+    {
+        SceneManager.LoadScene(" ");
+    }
+
     /*
     public void OpenLoad()
     {
