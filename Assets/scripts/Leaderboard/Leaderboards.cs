@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using Dan.Main;
 using System.Security.Cryptography.X509Certificates;
-using System.Linq;
 
 public class Leaderboards : MonoBehaviour
 {
@@ -22,19 +21,14 @@ public class Leaderboards : MonoBehaviour
     {
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) =>
         {
-            // Convert the List to an array
-            Dan.Models.Entry[] entries = msg.ToArray();
-
-            // Sort the leaderboard data by score in ascending order
-            entries = entries.OrderBy(entry => entry.Score).ToArray();
-
-            int loopLength = (entries.Length < names.Count) ? entries.Length : names.Count;
+            int loopLength = (msg.Length < names.Count) ? msg.Length : names.Count;
             for (int i = 0; i < loopLength; i++)
             {
-                names[i].text = entries[i].Username;
-                scores[i].text = entries[i].Score.ToString();
+                names[i].text = msg[i].Username;
+                scores[i].text = msg[i].Score.ToString();
             }
         }));
+              
     }
 
     public void SetLeaderboardEntry(string username, int score)
