@@ -1,9 +1,11 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Dan.Main;
-using System.Security.Cryptography.X509Certificates;
+
+
 
 public class Leaderboards : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class Leaderboards : MonoBehaviour
     [SerializeField] List<TextMeshProUGUI> scores;
 
     private string publicLeaderboardKey =
-        "6eb66ecbcdf8f5e1daa6957035da76d1b6e504c5f8052ec9ff280e6dc0bdd12a";
+        "615be92fdb4758523184c13910622154968eb8c495a19d41d929d17729754fd0";
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class Leaderboards : MonoBehaviour
                 scores[i].text = msg[i].Score.ToString();
             }
         }));
-              
+
     }
 
     public void SetLeaderboardEntry(string username, int score)
