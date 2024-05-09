@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour
 {
     public Timer timerScript; // Reference to the Timer script
     public TextMeshProUGUI inputScore;
-    public TMP_InputField inputName;
+    public TextMeshProUGUI inputName;
 
     public UnityEvent<string, int> submitScoreEvent;
 
