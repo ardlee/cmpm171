@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using FMOD.Studio;
+using Unity.VisualScripting;
 public class movement : MonoBehaviour { 
 
     public float directionX;
@@ -30,6 +31,12 @@ public class movement : MonoBehaviour {
     // audio
     private EventInstance playerFootsteps;
     private EventInstance charge;
+
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+
+    public bool knockFromRight;
 
     void Start()
     {
@@ -58,11 +65,26 @@ public class movement : MonoBehaviour {
 
 
         isGround = Physics2D.OverlapCircle(foot.position, ratioFoot, groundMask);
-
-        if (jumpValue == .0f && isGround)
+        if (KBCounter <= 0)
         {
-            rb.velocity = new Vector2(directionX * walkSpeed, rb.velocity.y);
-            animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+            if (jumpValue == .0f && isGround)
+            {
+                rb.velocity = new Vector2(directionX * walkSpeed, rb.velocity.y);
+                animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+            }
+        }
+        else
+        {
+            if(knockFromRight == true)
+            {
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if(knockFromRight == false)
+            {
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
+
+            KBCounter -= Time.deltaTime;
         }
 
         if (!isGround)
