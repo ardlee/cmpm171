@@ -18154,7 +18154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputScore: {fileID: 1855194065}
-  inputName: {fileID: 1895576060}
+  inputName: {fileID: 0}
   submitScoreEvent:
     m_PersistentCalls:
       m_Calls:

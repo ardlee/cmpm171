@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StealthScene.unity
     guid: 995c6b5b00301964b82e32c63c329211
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 555d93648acbae746b91f578ef146045
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0cbc1f03def630e4c84e0a2527242ca2, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: c20772264d9d0a443bf2a07598f2c50d, type: 2}

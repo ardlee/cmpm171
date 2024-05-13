@@ -37,7 +37,9 @@ public class sceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene(" ");
     }
-
+    public void startTutorial(){
+        SceneManager.LoadScene("TutorialScene");
+    }
     /*
     public void OpenLoad()
     {
