@@ -13,6 +13,7 @@ public class movingPlatform : MonoBehaviour
     private EventInstance movingPlatforms;
 
 
+
     public void Start()
     {
         nextPosition = end.position;
