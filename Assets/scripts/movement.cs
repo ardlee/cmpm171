@@ -14,7 +14,7 @@ public class movement : MonoBehaviour {
 
     // ground
     bool isGround;
-    float ratioFoot = .5f;
+    float ratioFoot = .55f;
 
     // jump
     bool canJump = true;

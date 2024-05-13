@@ -3443,6 +3443,10 @@ MonoBehaviour:
     m_Bits: 8
   player_bounce: {fileID: 6200000, guid: 76578a4b0d5d29446ac50cb1dccbdff6, type: 2}
   player_mat: {fileID: 6200000, guid: e54f5e64e0222f143aae56e067de7550, type: 2}
+  KBForce: 0
+  KBCounter: 0
+  KBTotalTime: 0
+  knockFromRight: 0
 --- !u!212 &508979405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13130,6 +13134,10 @@ MonoBehaviour:
     m_Bits: 8
   player_bounce: {fileID: 6200000, guid: 76578a4b0d5d29446ac50cb1dccbdff6, type: 2}
   player_mat: {fileID: 6200000, guid: e54f5e64e0222f143aae56e067de7550, type: 2}
+  KBForce: 0
+  KBCounter: 0
+  KBTotalTime: 0
+  knockFromRight: 0
 --- !u!50 &1221592138
 Rigidbody2D:
   serializedVersion: 4
