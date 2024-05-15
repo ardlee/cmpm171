@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class respawn : MonoBehaviour
 {
-    public Transform teleportDestination; // Set this in the Inspector by dragging the destination object
+    public Transform teleportDestination;
     public enemy enemy;
 
 
