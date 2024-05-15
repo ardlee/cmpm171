@@ -5,11 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using FMOD.Studio;
 using Unity.VisualScripting;
-public class movement : MonoBehaviour { 
+public class movement : MonoBehaviour
+{
 
     public float directionX;
     public float walkSpeed = 4f;
-    
+
     public Image jumpFillImage;
 
     // ground
@@ -37,10 +38,11 @@ public class movement : MonoBehaviour {
     public float KBTotalTime;
 
     public bool knockFromRight;
+    public int knockbackCount = 0;
 
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>(); 
+        rb = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
         charge = AudioManager.instance.CreateInstance(FMODEvents.instance.charge);
@@ -48,6 +50,7 @@ public class movement : MonoBehaviour {
 
     void Update()
     {
+
         directionX = Input.GetAxisRaw("Horizontal");
         // Store the current local scale
         Vector3 currentScale = transform.localScale;
@@ -75,11 +78,11 @@ public class movement : MonoBehaviour {
         }
         else
         {
-            if(knockFromRight == true)
+            if (knockFromRight == true)
             {
                 rb.velocity = new Vector2(-KBForce, KBForce);
             }
-            if(knockFromRight == false)
+            if (knockFromRight == false)
             {
                 rb.velocity = new Vector2(KBForce, KBForce);
             }
@@ -104,7 +107,7 @@ public class movement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W) && isGround && canJump)
         {
-            jumpValue += .2f;  
+            jumpValue += .2f;
             jumpFillImage.fillAmount = jumpValue / 15f;
         }
 

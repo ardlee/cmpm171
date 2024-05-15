@@ -11,6 +11,7 @@ public class enemy : MonoBehaviour
 
     public movement playerMovement;
     private Vector3 nextPosition;
+    public int knockbackCount = 0;
 
 
     public void Start()
@@ -29,18 +30,24 @@ public class enemy : MonoBehaviour
             nextPosition = (nextPosition == start.position) ? end.position : start.position;
         }
     }
-        private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            knockbackCount++;
             playerMovement.KBCounter = playerMovement.KBTotalTime;
-            if(collision.transform.position.x <= transform.position.x)
+            if (collision.transform.position.x <= transform.position.x)
             {
                 playerMovement.knockFromRight = true;
             }
-            if(collision.transform.position.x > transform.position.x)
+            if (collision.transform.position.x > transform.position.x)
             {
                 playerMovement.knockFromRight = false;
+            }
+
+            if (knockbackCount >= 4)
+            {
+                knockbackCount = 0;
             }
         }
     }
