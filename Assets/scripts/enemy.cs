@@ -16,7 +16,7 @@ public class enemy : MonoBehaviour
     public GameObject player;
     public Transform teleportDestination;
 
-
+    public GameObject camold, camnew;
 
     public void Start()
     {
@@ -53,7 +53,13 @@ public class enemy : MonoBehaviour
             {
                 knockbackCount = 0;
                 player.transform.position = teleportDestination.position;
+
+                camold.SetActive(false);
+                camnew.SetActive(true);
             }
         }
     }
+
+
+
 }

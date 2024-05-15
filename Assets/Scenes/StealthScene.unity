@@ -17964,11 +17964,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1392221655 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7935165624138096250, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
-  m_PrefabInstance: {fileID: 6021241148117748721}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1408723696
 GameObject:
   m_ObjectHideFlags: 0
@@ -62135,34 +62130,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1702093395 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7935165624138096250, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
-  m_PrefabInstance: {fileID: 8724863131135098613}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1702093400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702093395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6353b9f1f0021c34ab86a41c5b47acdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 1306364770}
-  end: {fileID: 287964353}
-  speed: 2
-  playerMovement: {fileID: 508979404}
-  knockbackCount: 0
 --- !u!114 &1702093401 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
   m_PrefabInstance: {fileID: 8724863131135098613}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702093395}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6353b9f1f0021c34ab86a41c5b47acdb, type: 3}
@@ -63017,7 +62990,7 @@ GameObject:
   - component: {fileID: 1812498489}
   m_Layer: 0
   m_Name: CameraPoint1
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64753,29 +64726,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7706469151204157424, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
   m_PrefabInstance: {fileID: 6021241148117748721}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2133004784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392221655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6353b9f1f0021c34ab86a41c5b47acdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 991669337}
-  end: {fileID: 809617195}
-  speed: 2
-  playerMovement: {fileID: 508979404}
-  knockbackCount: 0
 --- !u!114 &2133004785 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
   m_PrefabInstance: {fileID: 6021241148117748721}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392221655}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6353b9f1f0021c34ab86a41c5b47acdb, type: 3}
@@ -64936,9 +64892,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 991669337}
     - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: camnew
+      value: 
+      objectReference: {fileID: 1818717450}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: camold
+      value: 
+      objectReference: {fileID: 1735773477}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 508979401}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: camera1
+      value: 
+      objectReference: {fileID: 1818717452}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: currentCamera
+      value: 
+      objectReference: {fileID: 1735773480}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 508979404}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: teleportDestination
+      value: 
+      objectReference: {fileID: 1709733054}
     - target: {fileID: 7935165624138096250, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -64959,10 +64943,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7706469151204157424, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
       insertIndex: -1
       addedObject: {fileID: 493365782}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7935165624138096250, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2133004784}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
 --- !u!1001 &8724863131135098613
 PrefabInstance:
@@ -65029,9 +65010,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1306364770}
     - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: camnew
+      value: 
+      objectReference: {fileID: 1818717450}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: camold
+      value: 
+      objectReference: {fileID: 1304509899}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 508979401}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: camera1
+      value: 
+      objectReference: {fileID: 1818717452}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: currentCamera
+      value: 
+      objectReference: {fileID: 1304509902}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 508979404}
+    - target: {fileID: 7927277037634615851, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
+      propertyPath: teleportDestination
+      value: 
+      objectReference: {fileID: 1709733054}
     - target: {fileID: 7935165624138096250, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -65056,10 +65065,7 @@ PrefabInstance:
     - {fileID: 8600733512994958892, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7935165624138096250, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1702093400}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0984441ef97cdb342827e911ca4fa014, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
