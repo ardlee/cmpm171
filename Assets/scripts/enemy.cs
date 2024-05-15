@@ -13,6 +13,10 @@ public class enemy : MonoBehaviour
     private Vector3 nextPosition;
     public int knockbackCount = 0;
 
+    public GameObject player;
+    public Transform teleportDestination;
+
+
 
     public void Start()
     {
@@ -48,6 +52,7 @@ public class enemy : MonoBehaviour
             if (knockbackCount >= 4)
             {
                 knockbackCount = 0;
+                player.transform.position = teleportDestination.position;
             }
         }
     }
