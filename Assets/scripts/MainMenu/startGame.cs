@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Services.Core;
+using Unity.Services.Analytics;
 
 public class startGame : MonoBehaviour
 {
-
+    
     public GameObject startGameMenu;
     public GameObject GameMenu;
     public bool isStart = false;
@@ -43,4 +45,27 @@ public class startGame : MonoBehaviour
 
 
 
+}
+
+public class InitWithDefault : MonoBehaviour
+{
+    async void Start()
+    {
+		await UnityServices.InitializeAsync();
+
+		AskForConsent();
+    }
+
+	void AskForConsent()
+	{
+        ConsentGiven();
+        UnityServices.InitializeAsync();
+
+		// ... show the player a UI element that asks for consent.
+	}
+
+	void ConsentGiven()
+	{
+		AnalyticsService.Instance.StartDataCollection();
+	}
 }

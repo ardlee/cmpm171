@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
+using Unity.Services.Core;
+using Unity.Services.Analytics;
 
 public class onTopFinishTutorial : MonoBehaviour
 {
@@ -25,6 +27,13 @@ public class onTopFinishTutorial : MonoBehaviour
             openCanvas.SetActive(true);
             Debug.Log("working2");
             AudioManager.instance.PlayOneShot(FMODEvents.instance.victorySound, this.transform.position);
+
+            CustomEvent tutorialComplete = new CustomEvent("TutorialComplete"){};
+            Debug.Log(tutorialComplete);
+            AnalyticsService.Instance.RecordEvent(tutorialComplete);
+            //AnalyticsResult analyticsResult = Analytics.Instance.CustomData("TutorialComplete");
+            //AnalyticsResult analyticsResult = Analytics.CustomEvent("TutorialComplete");
+            //Debug.Log("analyticsResult: " + analyticsResult);
         }
     }
 

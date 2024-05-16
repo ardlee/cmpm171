@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
+using Unity.Services.Core;
+using Unity.Services.Analytics;
 
 public class onTopFinish : MonoBehaviour
 {
@@ -26,6 +28,10 @@ public class onTopFinish : MonoBehaviour
             Debug.Log("working2");
             AudioManager.instance.PlayOneShot(FMODEvents.instance.victorySound, this.transform.position);
             timerScript.enabled = false;
+
+            CustomEvent mainLevelComplete = new CustomEvent("mainLevelComplete"){};
+            //Debug.Log(tutorialComplete);
+            AnalyticsService.Instance.RecordEvent(mainLevelComplete);
         }
     }
 
