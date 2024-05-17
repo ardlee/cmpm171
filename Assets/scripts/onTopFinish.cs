@@ -13,9 +13,11 @@ public class onTopFinish : MonoBehaviour
     public GameObject openCanvas;
     public Timer timerScript; // Reference to the Timer script
 
-    public void Start()
+    public async void Start()
     {
         openCanvas.SetActive(false);
+        await UnityServices.InitializeAsync();
+        AnalyticsService.Instance.StartDataCollection();
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
