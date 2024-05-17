@@ -12,24 +12,24 @@ public class startGame : MonoBehaviour
     public GameObject GameMenu;
     public bool isStart = false;
 
-    void AskForConsent()
-	{
-        ConsentGiven();
-        UnityServices.InitializeAsync();
+    // void AskForConsent()
+	// {
+    //     ConsentGiven();
+    //     UnityServices.InitializeAsync();
 
-		// ... show the player a UI element that asks for consent.
-	}
+	// 	// ... show the player a UI element that asks for consent.
+	// }
 
-	void ConsentGiven()
-	{
-		AnalyticsService.Instance.StartDataCollection();
+	// void ConsentGiven()
+	// {
+	// 	AnalyticsService.Instance.StartDataCollection();
 
-	}
+	// }
     // Start is called before the first frame update
-    void Start()
+    async void Start()
     {
         startGameMenu.SetActive(false);
-        UnityServices.InitializeAsync();
+        await UnityServices.InitializeAsync();
         AnalyticsService.Instance.StartDataCollection();
 		//AskForConsent();
     }
