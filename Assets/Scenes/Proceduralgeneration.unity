@@ -487,16 +487,10 @@ MonoBehaviour:
   mapWidth: 24
   mapHeight: 45
   platformWidth: 3
-<<<<<<< HEAD
   minSeparationHorizontal: 1
   maxSeparationHorizontal: 3
   minSeparationVertical: 3
   maxSeparationVertical: 3
-=======
-  platformSpacingHorizontal: 4
-  minSeparationVertical: 3
-  maxSeparationVertical: 4
->>>>>>> JoseLevels
 --- !u!4 &172556483
 Transform:
   m_ObjectHideFlags: 0
@@ -1726,12 +1720,6 @@ GameObject:
   - component: {fileID: 1485492753}
   - component: {fileID: 1485492755}
   - component: {fileID: 1485492754}
-<<<<<<< HEAD
-=======
-  - component: {fileID: 1485492756}
-  - component: {fileID: 1485492758}
-  - component: {fileID: 1485492757}
->>>>>>> JoseLevels
   m_Layer: 3
   m_Name: Walls
   m_TagString: Untagged
@@ -1841,117 +1829,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
-<<<<<<< HEAD
-=======
---- !u!19719996 &1485492756
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485492752}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
---- !u!66 &1485492757
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485492752}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1485492756}
-    m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 1485492752}
---- !u!50 &1485492758
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485492752}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 7
->>>>>>> JoseLevels
 --- !u!1 &1574535326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,10 +1842,6 @@ GameObject:
   - component: {fileID: 1574535328}
   - component: {fileID: 1574535331}
   - component: {fileID: 1574535330}
-<<<<<<< HEAD
-=======
-  - component: {fileID: 1574535332}
->>>>>>> JoseLevels
   m_Layer: 3
   m_Name: atformsms
   m_TagString: Untagged
@@ -2086,11 +1959,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574535326}
-<<<<<<< HEAD
   m_BodyType: 0
-=======
-  m_BodyType: 1
->>>>>>> JoseLevels
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2105,15 +1974,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-<<<<<<< HEAD
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-=======
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
->>>>>>> JoseLevels
   m_Constraints: 7
 --- !u!19719996 &1574535331
 TilemapCollider2D:
@@ -2146,63 +2009,11 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-<<<<<<< HEAD
   m_UsedByComposite: 0
-=======
-  m_UsedByComposite: 1
->>>>>>> JoseLevels
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
-<<<<<<< HEAD
-=======
---- !u!66 &1574535332
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574535326}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1574535331}
-    m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 1574535326}
->>>>>>> JoseLevels
 --- !u!1 &1723013575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,11 +2332,7 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111345536}
-<<<<<<< HEAD
   m_Enabled: 0
-=======
-  m_Enabled: 1
->>>>>>> JoseLevels
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
@@ -2545,32 +2352,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111345536}
-<<<<<<< HEAD
   m_Enabled: 0
-=======
-  m_Enabled: 1
->>>>>>> JoseLevels
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8959b79286ea4b94fa1643aa96c09d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   mainCamera: {fileID: 0}
   _lineRenderer: {fileID: 0}
   _distanceJoint: {fileID: 0}
   grappleLength: 2
   ropeSpeed: 5
   swingForce: 2
-=======
-  grappleLength: 2
-  initialRopeMultiplier: 2
-  ropeSpeed: 5
-  swingForce: 2
-  grappleLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  rope: {fileID: 696135148}
->>>>>>> JoseLevels
 --- !u!114 &2111345540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2759,11 +2551,7 @@ Transform:
   m_GameObject: {fileID: 2111345536}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 3.85, y: 3.21, z: 0}
-=======
-  m_LocalPosition: {x: 3.85, y: 2.3, z: 0}
->>>>>>> JoseLevels
   m_LocalScale: {x: 3.9069846, y: 3.4955509, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
