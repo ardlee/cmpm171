@@ -5,21 +5,25 @@ public class FlagSpawn : MonoBehaviour
 {
     public Tilemap tilemap;
     public TileBase tile;
+    public ProceduralPlatformGenerator platformGenerator; // Reference to the platform generator
 
     private void Start()
     {
-        SpawnTiles();
+        SpawnTile();
     }
 
-    private void SpawnTiles()
+    private void SpawnTile()
     {
-        int fixedY = 49;
-
-        // Loop through x values from 1 to 24
-        for (int x = 1; x < 24; x++)
+        if (platformGenerator == null)
         {
-            Vector3Int spawnPosition = new Vector3Int(x, fixedY, 0);
-            tilemap.SetTile(spawnPosition, tile);
+            Debug.LogError("PlatformGenerator is not assigned!");
+            return;
         }
+
+        // Get the final platform position from the generator
+        Vector3Int finalPlatformPosition = platformGenerator.GetFinalPlatformPosition() + new Vector3Int(0, 1, 0);
+
+        // Set the flag tile at the final platform position
+        tilemap.SetTile(finalPlatformPosition, tile);
     }
 }

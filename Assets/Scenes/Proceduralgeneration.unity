@@ -485,7 +485,7 @@ MonoBehaviour:
   basePlatformTile: {fileID: 11400000, guid: 0844eb0dc4e12d3449655d118b13a2cc, type: 2}
   platformTile: {fileID: 11400000, guid: eadd68b84993f3e4db202ecd90cc20b6, type: 2}
   mapWidth: 24
-  mapHeight: 45
+  mapHeight: 95
   platformWidth: 3
   minPlatformSpacingHorizontal: 3
   maxPlatformSpacingHorizontal: 5
@@ -1651,19 +1651,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1485492755}
-  leftTilesSection1:
-  - {fileID: 11400000, guid: 73190e81d64314e43b6fd7ceaf3e12d2, type: 2}
-  rightTilesSection1:
-  - {fileID: 11400000, guid: 55118eee399fd4740bc418cd8d0a7a68, type: 2}
-  leftTilesSection2:
-  - {fileID: 11400000, guid: 83e9397bc5eab2544bc455fa3db7676f, type: 2}
-  rightTilesSection2:
-  - {fileID: 11400000, guid: 83e9397bc5eab2544bc455fa3db7676f, type: 2}
-  leftTilesSection3:
-  - {fileID: 11400000, guid: be4051b985b44654084a07910ace7ae5, type: 2}
-  rightTilesSection3:
-  - {fileID: 11400000, guid: be4051b985b44654084a07910ace7ae5, type: 2}
-  mapHeight: 50
+  leftWallTile: {fileID: 11400000, guid: 5e18e12ac59974c47b5ebb0a4a8867bd, type: 2}
+  rightWallTile: {fileID: 11400000, guid: 5e18e12ac59974c47b5ebb0a4a8867bd, type: 2}
+  mapHeight: 100
 --- !u!4 &1358898623
 Transform:
   m_ObjectHideFlags: 0
@@ -2367,7 +2357,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!19719996 &1663526631
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -2831,6 +2821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1663526626}
   tile: {fileID: 11400000, guid: dcdd08f8f93997e48a7113991de07a6f, type: 2}
+  platformGenerator: {fileID: 172556482}
 --- !u!4 &2102354778
 Transform:
   m_ObjectHideFlags: 0
@@ -3270,7 +3261,7 @@ MonoBehaviour:
   section3Tiles:
   - {fileID: 11400000, guid: 7a97dc311db69904f9669aea16645471, type: 2}
   mapWidth: 25
-  mapHeight: 50
+  mapHeight: 100
   numSections: 3
   sectionHeight: 0
 --- !u!4 &2138814616
@@ -3440,8 +3431,8 @@ SceneRoots:
   - {fileID: 2138814616}
   - {fileID: 1358898623}
   - {fileID: 172556483}
+  - {fileID: 2102354778}
   - {fileID: 1184259451}
   - {fileID: 2111345547}
   - {fileID: 1805784964}
   - {fileID: 1357911204}
-  - {fileID: 2102354778}
