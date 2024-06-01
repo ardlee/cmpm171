@@ -7,14 +7,14 @@ using Dan.Main;
 
 
 
-public class Leaderboards : MonoBehaviour
+public class StealthLeaderboards : MonoBehaviour
 {
     [SerializeField] private List<TextMeshProUGUI> names;
     [SerializeField] List<TextMeshProUGUI> scores;
 
     private string publicLeaderboardKey =
         //"615be92fdb4758523184c13910622154968eb8c495a19d41d929d17729754fd0";
-        "d1fd9df8fe7ebed5e5244a6695f0c694f607342bab3c4480562c48d273d91665";
+        "4c7d92e2078531198c80ae6977f974ed7d1bc014d9839fb8f2b4cf2b9707860f";
 
     private void Start()
     {
