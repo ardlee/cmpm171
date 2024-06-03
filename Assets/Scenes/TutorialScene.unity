@@ -334,8 +334,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: onTopFinish, Assembly-CSharp
+      - m_Target: {fileID: 535277672}
+        m_TargetAssemblyTypeName: onTopFinishTutorial, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
