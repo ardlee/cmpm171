@@ -17,9 +17,14 @@ public class ProceduralPlatformGenerator : MonoBehaviour
     public int minSeparationVertical = 1; // Adjusted to meet the requirements
     public int maxSeparationVertical = 3; // Adjusted to meet the requirements
 
+    // Store the position of the final platform
+    private Vector3Int finalPlatformPosition;
+
     void Start()
     {
         GeneratePlatforms();
+        SpawnPlatformAtHeight(52); // Spawn platform at y = 52
+        SpawnFinalPlatform();
     }
 
     void GeneratePlatforms()
@@ -89,5 +94,45 @@ public class ProceduralPlatformGenerator : MonoBehaviour
             Vector3Int tilePosition = new Vector3Int(x, startY, 0);
             tilemap.SetTile(tilePosition, platformTile);
         }
+    }
+
+    void SpawnPlatformAtHeight(int height)
+    {
+        // Ensure the height is within the bounds of the map
+        if (height >= mapHeight)
+        {
+            Debug.LogError("Height is out of bounds!");
+            return;
+        }
+
+        // Calculate a random starting x position ensuring the platform fits within the map width
+        int startX = Random.Range(0, mapWidth - platformWidth);
+
+        // Generate the platform
+        GeneratePlatform(startX, height);
+    }
+
+    void SpawnFinalPlatform()
+    {
+        int y = 96; // Set the height to 48
+
+        // Calculate a random starting x position between 1 and 22 (inclusive)
+        int startX = Random.Range(1, 23); // Range is inclusive of min and exclusive of max, so use 23 to include 22
+
+        // Ensure the platform fits within the map width
+        if (startX + platformWidth > mapWidth)
+        {
+            startX = mapWidth - platformWidth; // Adjust startX to ensure the platform fits
+        }
+
+        // Generate the platform and store the middle position
+        GeneratePlatform(startX, y);
+        finalPlatformPosition = new Vector3Int(startX + platformWidth / 2, y, 0);
+    }
+
+    // Expose the final platform position
+    public Vector3Int GetFinalPlatformPosition()
+    {
+        return finalPlatformPosition;
     }
 }

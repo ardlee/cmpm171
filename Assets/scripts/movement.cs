@@ -3,16 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class movement : MonoBehaviour { 
+using FMOD.Studio;
+using Unity.VisualScripting;
+public class movement : MonoBehaviour
+{
 
     public float directionX;
     public float walkSpeed = 4f;
-    
+
     public Image jumpFillImage;
 
     // ground
     bool isGround;
-    float ratioFoot = .5f;
+    float ratioFoot = .55f;
 
     // jump
     bool canJump = true;
@@ -26,14 +29,28 @@ public class movement : MonoBehaviour {
     public LayerMask groundMask;
     public PhysicsMaterial2D player_bounce, player_mat;
 
+    // audio
+    private EventInstance playerFootsteps;
+    private EventInstance charge;
+
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+
+    public bool knockFromRight;
+    public int knockbackCount = 0;
+
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>(); 
+        rb = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
+        charge = AudioManager.instance.CreateInstance(FMODEvents.instance.charge);
     }
 
     void Update()
     {
+
         directionX = Input.GetAxisRaw("Horizontal");
         // Store the current local scale
         Vector3 currentScale = transform.localScale;
@@ -51,11 +68,26 @@ public class movement : MonoBehaviour {
 
 
         isGround = Physics2D.OverlapCircle(foot.position, ratioFoot, groundMask);
-
-        if (jumpValue == .0f && isGround)
+        if (KBCounter <= 0)
         {
-            rb.velocity = new Vector2(directionX * walkSpeed, rb.velocity.y);
-            animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+            if (jumpValue == .0f && isGround)
+            {
+                rb.velocity = new Vector2(directionX * walkSpeed, rb.velocity.y);
+                animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+            }
+        }
+        else
+        {
+            if (knockFromRight == true)
+            {
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if (knockFromRight == false)
+            {
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
+
+            KBCounter -= Time.deltaTime;
         }
 
         if (!isGround)
@@ -75,7 +107,7 @@ public class movement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W) && isGround && canJump)
         {
-            jumpValue += .06f;  
+            jumpValue += .2f;
             jumpFillImage.fillAmount = jumpValue / 15f;
         }
 
@@ -111,6 +143,45 @@ public class movement : MonoBehaviour {
             canJump = true;
         }
 
+        UpdateSound();
+
+    }
+    private void UpdateSound()
+    {
+        // start footsteps event if the player has an x velocity and is on the ground
+        if (rb.velocity.x != 0 && isGround && !Input.GetKey(KeyCode.W))
+        {
+            // get the playback state
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+            float volume = 0.2f;
+            playerFootsteps.setVolume(volume);
+        }
+        // otherwise, stop the footsteps event
+        else
+        {
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+
+        if (Input.GetKey(KeyCode.W) && isGround)
+        {
+            PLAYBACK_STATE chargePlaybackState;
+            charge.getPlaybackState(out chargePlaybackState);
+            if (chargePlaybackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                charge.start();
+            }
+            float volume = 0.2f;
+            charge.setVolume(volume);
+        }
+        else
+        {
+            charge.stop(STOP_MODE.ALLOWFADEOUT);
+        }
     }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 
 public class movingPlatform : MonoBehaviour
 {
@@ -9,10 +10,18 @@ public class movingPlatform : MonoBehaviour
     public float speed = 2.0f;
 
     private Vector3 nextPosition;
+    private EventInstance movingPlatforms;
+
+
 
     public void Start()
     {
         nextPosition = end.position;
+        movingPlatforms = AudioManager.instance.CreateInstance(FMODEvents.instance.MovingPlatforms);
+        float volume = 0.2f;
+        movingPlatforms.setVolume(volume);
+        //movingPlatforms.start();
+
     }
 
     public void Update()
@@ -51,5 +60,10 @@ public class movingPlatform : MonoBehaviour
 
             pRb.interpolation = RigidbodyInterpolation2D.Interpolate;
         }
+    }
+    private void OnDestroy()
+    {
+        // Release FMOD event instance when object is destroyed
+        movingPlatforms.release();
     }
 }

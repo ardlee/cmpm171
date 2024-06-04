@@ -1,91 +1,81 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Grappling : MonoBehaviour
 {
+    public Camera mainCamera;
+    public LineRenderer _lineRenderer;
+    public DistanceJoint2D _distanceJoint;
+
     [SerializeField] private float grappleLength;
-    [SerializeField] private float initialRopeMultiplier = 2f;
+
     [SerializeField] private float ropeSpeed = 5f;
     [SerializeField] private float swingForce = 20f;
-    [SerializeField] private LayerMask grappleLayer;
-    [SerializeField] private LineRenderer rope;
+    private cardManager cardManager;
+    private movement movement;
 
-    private Vector3 grapplePoint;
-    private DistanceJoint2D joint;
-    private cardManager cardManager; 
+    float timer = 10f;
+    float startTime;
 
+    // Start is called before the first frame update
     void Start()
     {
-        joint = gameObject.GetComponent<DistanceJoint2D>();
-        joint.enabled = false;
-        rope.enabled = false;
-
-        // Set initial rope length
-        joint.distance = grappleLength * initialRopeMultiplier;
-
-        // Get reference to the cardManager script
+        _distanceJoint.enabled = false;
         cardManager = GetComponent<cardManager>();
+        movement = GetComponent<movement>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // Check if the player is on the card that allows grappling\
-        if (cardManager != null && cardManager.currentcardIndex == 0 && cardManager.ammoCounts[cardManager.currentcardIndex] > -1)
+        if (cardManager != null && cardManager.currentcardIndex == 0 && cardManager.ammoCounts[cardManager.currentcardIndex] > 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+             if (Input.GetKeyDown(KeyCode.Space))
+        {
+            startTime = Time.time;
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _lineRenderer.SetPosition(0, mousePos);
+            _lineRenderer.SetPosition(1, transform.position);
+            _distanceJoint.connectedAnchor = mousePos;
+            _distanceJoint.enabled = true;
+            _lineRenderer.enabled = true;
+        }
+            else if (Input.GetKeyUp(KeyCode.Space))
             {
-                RaycastHit2D hit = Physics2D.Raycast(
-                    origin: Camera.main.ScreenToWorldPoint(Input.mousePosition),
-                    direction: Vector2.zero,
-                    distance: Mathf.Infinity,
-                    layerMask: grappleLayer
-                );
-
-                if (hit.collider != null)
-                {
-                    grapplePoint = hit.point;
-                    grapplePoint.z = 0;
-                    joint.connectedAnchor = grapplePoint;
-                    joint.enabled = true;
-                    rope.SetPosition(0, grapplePoint);
-                    rope.SetPosition(1, transform.position);
-                    rope.enabled = true;
-                }
-                if(hit.collider == null){
-                    cardManager.ammoCounts[cardManager.currentcardIndex]++;
-                    cardManager.UpdateAmmoUI();
-                }
+                _distanceJoint.enabled = false;
+                _lineRenderer.enabled = false;
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (_distanceJoint.enabled && Time.time - startTime >= timer)
         {
-            joint.enabled = false;
-            rope.enabled = false;
+            _distanceJoint.enabled = false;
+            _lineRenderer.enabled = false;
         }
 
-        if (rope.enabled == true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rope.SetPosition(1, transform.position);
+            Debug.Log(_distanceJoint.enabled);
+        }
 
-            // Adjust rope length using W and S keys
+        if (_distanceJoint.enabled)
+        {
+            _lineRenderer.SetPosition(1, transform.position);
             float ropeInput = Input.GetAxis("Vertical");
-            joint.distance += ropeInput * ropeSpeed * Time.deltaTime;
-            joint.distance = Mathf.Clamp(joint.distance, 0, grappleLength + 4);
+            _distanceJoint.distance += ropeInput * ropeSpeed * Time.deltaTime;
+            _distanceJoint.distance = Mathf.Clamp(_distanceJoint.distance, 0, grappleLength + 4);
 
             // Allow swinging using A and D keys
             float swingInput = Input.GetAxis("Horizontal");
             Vector2 swingForceVector = new Vector2(swingInput * swingForce, 0f);
             GetComponent<Rigidbody2D>().AddForce(swingForceVector, ForceMode2D.Force);
         }
-    }
 
-    // Check if there is enough ammo for the grapple
-    bool CanUseGrapple()
-    {   
-
-        return cardManager.ammoCounts[cardManager.currentcardIndex]> 0;
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            _distanceJoint.enabled = false;
+            _lineRenderer.enabled = false;
+        }
     }
 }
