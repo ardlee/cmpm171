@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1574535329}
-  basePlatformTile: {fileID: 11400000, guid: 0844eb0dc4e12d3449655d118b13a2cc, type: 2}
+  basePlatformTile: {fileID: 11400000, guid: 5e18e12ac59974c47b5ebb0a4a8867bd, type: 2}
   platformTile: {fileID: 11400000, guid: eadd68b84993f3e4db202ecd90cc20b6, type: 2}
   mapWidth: 24
   mapHeight: 95
