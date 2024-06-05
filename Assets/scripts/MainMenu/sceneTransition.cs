@@ -35,11 +35,13 @@ public class sceneTransition : MonoBehaviour
 
     public void StartPCGGame()
     {
-        SceneManager.LoadScene(" ");
+        SceneManager.LoadScene("Proceduralgeneration");
     }
     public void startTutorial(){
         SceneManager.LoadScene("TutorialScene");
     }
+
+    
     /*
     public void OpenLoad()
     {
